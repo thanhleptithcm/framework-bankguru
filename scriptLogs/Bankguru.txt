@@ -1,0 +1,2 @@
+[2022-07-26 16:01:00,283] OS name = mac os x
+[2022-07-26 16:01:00,284] Driver instance name = firefoxdriver: firefox on mac (66f5e6ce-a851-4fc0-873c-9d2ca7a2ce9e)

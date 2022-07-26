@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="BankGuru">
+
+	<listeners>
+		<listener class-name="commons.MethodListener"/>
+		<listener class-name="reportConfig.ExtentTestListener"/>
+	</listeners>
+	
+	<parameter name="url" value="https://demo.guru99.com/v4/" />
+	
+	<test name="Run on FireFox">
+
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.bankguru.user.Level_01_Register" />
+		</classes>
+	</test>
+
+</suite>
