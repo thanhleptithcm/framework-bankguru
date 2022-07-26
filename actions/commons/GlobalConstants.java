@@ -3,11 +3,10 @@ package commons;
 import java.io.File;
 
 public class GlobalConstants {
-	public static final String REGISTER_URL = "https://demo.guru99.com/";
-	public static final String LOGIN_URL = "https://demo.guru99.com/v4/";
+	public static final String NORMAL_URL = "https://demo.guru99.com/v4/";
 
 	public static long LONG_TIMEOUT = 30;
-	public static long SHORT_TIMEOUT = 5;
+	public static long SHORT_TIMEOUT = 10;
 	public static long RETRY_TEST_FAIL = 3;
 
 	public static  String OS_NAME = System.getProperty("os.name");

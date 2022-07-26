@@ -5,7 +5,7 @@ public class BasePageUI {
 	public static final String DYNAMIC_TEXTBOX_BY_NAME = "//input[@name='%s']";
 	
 	public static final String DYNAMIC_BUTTON_BY_TEXT = "//button[text()='%s']";
-	public static final String DYNAMIC_BUTTON_BY_NAME = "//button[@name='%s']";
+	public static final String DYNAMIC_BUTTON_BY_NAME = "//input[@name='%s']";
 	
 	public static final String DYNAMIC_DROPDOWN_BY_NAME = "//select[@name='%s']";
 	public static final String DYNAMIC_RADIO_BUTTON_BY_LABEL =  "//label[text()='%s']/preceding-sibling::input";

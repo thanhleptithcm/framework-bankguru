@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.LocatorType;
 import pageUIs.user.LoginPageUI;
 
 public class UserLoginPageObject extends BasePage{
@@ -40,12 +41,12 @@ public class UserLoginPageObject extends BasePage{
 	}
 
 	public String getTextHeaderLoginSuccess() {
-		waitForElementVisible(driver, LoginPageUI.HEADER_H3_TEXTBOX);
-		return getElementTextByXpath(driver, LoginPageUI.HEADER_H3_TEXTBOX);
+		waitForElementVisible(driver, LoginPageUI.HEADER_H3_TEXTBOX, LocatorType.CSS);
+		return getElementText(driver, LoginPageUI.HEADER_H3_TEXTBOX, LocatorType.CSS);
 	}
 
 	public String getTextMangerID() {
-		waitForElementVisible(driver, LoginPageUI.MANGER_ID);
-		return getElementTextByXpath(driver, LoginPageUI.MANGER_ID);
+		waitForElementVisible(driver, LoginPageUI.MANGER_ID, LocatorType.CSS);
+		return getElementText(driver, LoginPageUI.MANGER_ID, LocatorType.CSS);
 	}
 }

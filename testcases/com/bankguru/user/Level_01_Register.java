@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
+import commons.GlobalConstants;
 import commons.PageGenerateManager;
 import pageObjects.UserLoginPageObject;
 import reportConfig.ExtentTestManager;
@@ -54,7 +55,7 @@ public class Level_01_Register extends BaseTest{
 	public void User_02_Login(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Start Login");
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Open Login Page");
-		loginPage.openPageUrl(driver, "https://demo.guru99.com/v4/");
+		loginPage.openPageUrl(driver, GlobalConstants.NORMAL_URL);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Input User ID With Value: " + userID);
 		loginPage.inputToTextboxByName(driver, "uid", userID);
