@@ -11,17 +11,18 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
-import commons.GlobalConstants;
 import commons.PageGenerateManager;
-import pageObjects.UserLoginPageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserRegisterPageObject;
 import reportConfig.ExtentTestManager;
 
-public class Level_01_Register extends BaseTest{
+public class User_01_Register_Login extends BaseTest{
 	
 	private WebDriver driver;
 	private String emailAddress;
-	private String userID, userPassword;
+	public static String userID, userPassword;
 	private UserLoginPageObject loginPage;
+	private UserRegisterPageObject registerPage;
 	
 	@Parameters({"browser", "url"})
 	@BeforeClass
@@ -36,27 +37,27 @@ public class Level_01_Register extends BaseTest{
 	public void User_01_Register(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Start Register");
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: Click To Here Link");
-		loginPage.clickToHereLink();
-
+		registerPage = loginPage.clickToHereLink();
+		
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02: Input Email Address With Value: " + emailAddress);
-		loginPage.inputToTextboxByName(driver, "emailid", emailAddress);
+		registerPage.inputToTextboxByName(driver, "emailid", emailAddress);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 03: Click To Login Button");
-		loginPage.clickToButtonByName(driver, "btnLogin");
+		registerPage.clickToButtonByName(driver, "btnLogin");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 04: Get Text User ID");
-		userID = loginPage.getTextUserId();
+		userID = registerPage.getTextUserId();
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05: Get Text Password");
-		userPassword = loginPage.getTextPassword();
+		userPassword = registerPage.getTextPassword();
 	}
-
+	
 	@Test
 	public void User_02_Login(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Start Login");
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Open Login Page");
-		loginPage.openPageUrl(driver, GlobalConstants.NORMAL_URL);
-
+		loginPage = registerPage.openLoginPage();
+		
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Input User ID With Value: " + userID);
 		loginPage.inputToTextboxByName(driver, "uid", userID);
 		

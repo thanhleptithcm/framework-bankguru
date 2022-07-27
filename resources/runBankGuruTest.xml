@@ -12,7 +12,8 @@
 
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.bankguru.user.Level_01_Register" />
+			<class name="com.bankguru.user.User_01_Register_Login" />
+			<class name="com.bankguru.customer.New_Customer_01" />
 		</classes>
 	</test>
 
